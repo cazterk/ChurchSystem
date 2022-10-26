@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "TB5oCo6U5SzijwjbjvRUWMIKI1D6tufD19PcdhtbGNM=",
+  "Source": "ChurchSystem.API",
+  "BasePath": "_content/ChurchSystem.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
