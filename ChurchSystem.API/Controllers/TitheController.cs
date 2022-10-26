@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using ChurchSystem.API.Models;
+using System;
+using System.Linq;
 
 namespace ChurchSystem.API;
 
@@ -9,17 +12,21 @@ namespace ChurchSystem.API;
 public class TitheController : ControllerBase
 {
 
-
-    private readonly ILogger<TitheController> _logger;
-
-    public TitheController(ILogger<TitheController> logger)
+    private readonly ITitheService _titheService;
+    public TitheController(ITitheService titheService)
     {
-        _logger = logger;
+        _titheService = titheService;
+    }
+
+    public TitheController()
+    {
+
     }
 
     [HttpGet(Name = "GetTithe")]
     public async Task<IActionResult> Get()
     {
-        return null;
+        var tithe = await _titheService.GetAllTithes();
+        return Ok(tithe);
     }
 }

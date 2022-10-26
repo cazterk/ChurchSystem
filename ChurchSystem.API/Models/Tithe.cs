@@ -2,7 +2,7 @@ namespace ChurchSystem.API;
 
 public class Tithe
 {
-    public MeetingType MeetingType { get; set; }
+    public MeetingTypes MeetingType { get; set; }
 
     public double CollectionedAmount { get; set; }
 
