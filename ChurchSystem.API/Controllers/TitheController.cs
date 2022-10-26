@@ -27,6 +27,11 @@ public class TitheController : ControllerBase
     public async Task<IActionResult> Get()
     {
         var tithe = await _titheService.GetAllTithes();
-        return Ok(tithe);
+
+        if (tithe.Any())
+        {
+            return Ok(tithe);
+        }
+        return NotFound();
     }
 }
