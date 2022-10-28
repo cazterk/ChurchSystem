@@ -1,11 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using ChurchSystem.API.Models;
 using System;
 using System.Linq;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using ChurchSystem.API;
+
+
 
 namespace ChurchSystem.API;
-
 
 [ApiController]
 [Route("[controller]")]
@@ -26,7 +27,7 @@ public class TitheController : ControllerBase
     [HttpGet(Name = "GetTithe")]
     public async Task<IActionResult> Get()
     {
-        var tithe = await _titheService.GetAllTithes();
+        var tithe = await _titheService.GetAllTithe();
 
         if (tithe.Any())
         {
@@ -34,4 +35,17 @@ public class TitheController : ControllerBase
         }
         return NotFound();
     }
+
+    // [HttpPost(Name = "PostTithe")]
+    // public async Task<IActionResult> Post()
+    // {
+    //     var tithe = await _titheService.CreateTitheEntry();
+    //     if (tithe != null)
+    //     {
+    //         return Ok(tithe);
+    //     }
+    //     return BadRequest();
+    // }
 }
+
+

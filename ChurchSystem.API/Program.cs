@@ -28,4 +28,5 @@ app.Run();
 void ConfigureServices(IServiceCollection services)
 {
     services.AddTransient<ITitheService, TitheService>();
+    services.AddHttpClient<ITitheService, TitheService>();
 }
